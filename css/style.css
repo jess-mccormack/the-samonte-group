@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* CSS DOC */
 
+
+/*---------- MAIN ----------*/
+
 html {
   margin: 0px;
   -ms-text-size-adjust: 100%;
@@ -10,13 +13,13 @@ html {
 body {
   font-family: 'Roboto', helvetica, sans-serif;
   font-weight: 300;
-  color: #505b67; /* samonte blue/grey */
+  color: #505c67; /* samonte blue/grey */
   margin: 0px;
+  background-color: #ebe2d4;
 }
 
 span {
   font-weight: 500;
-
 }
 
 .clear {
@@ -24,77 +27,128 @@ span {
 }
 
 #wrapper {
-  max-width: 1200px;
+  max-width: 400px;
   margin: auto;
   width: 90%;
 }
 
-/* GRID */
+      /************* DESKTOP - Main Styles ********/
+            @media (min-width: 768px) {
+                #wrapper {
+                  max-width: 1000px;
+                }
+            }
+
+
+/*---------- GRID ----------*/
 
 .content-container {
   display: grid;
-  grid-template-columns: repeat(12, 100px);
-  grid-template-rows: repeat(8, 100px);
-  background-color: #fff;
+  grid-template-columns: repeat(3, 105px);
+  grid-template-rows: repeat(6, 100px);
+  background-color: #ebe2d4;
   justify-content: center;
 }
+
+      /************* DESKTOP - Grid Styles ********/
+            @media (min-width: 768px) {
+              .content-container {
+                grid-template-columns: repeat(12, 100px);
+                grid-template-rows: repeat(8, 100px);
+              }
+            }
 
 /*---------- SPLASH PAGE ----------*/
 
 .header-container i {
-    font-size: 1.75em;
-    margin: 15px;
+    font-size: 1.25em;
     display: inline-block;
     float: right;
-    padding: 5px;
+    margin-top: 15px;
 }
 
 .header-container a {
     text-decoration: none;
-    color: #FFF;
+    color: #ebe2d4;
 }
 .splash-logo {
-    grid-column: 6 / 8;
-    grid-row: 3 / 5;
-    background-color: red;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    text-align: center;
 }
 
 .splash-logo img {
-    width: 250px;
+    width: 200px;
     height: auto;
     text-align: center;
 }
 
-#splash-header-logo {
+#splash-header-logo h3 {
     font-family: 'Roboto', helvetica, sans-serif;
     text-transform: lowercase;
     text-decoration: none;
     font-weight: 300;
-    font-size: 18px;
+    font-size: .9em;
     letter-spacing: 6pt;
     color: #FFF;
-    margin-top: 21px;
     text-align: center;
-
+    margin-top: 15px;
 }
+
+      /************* DESKTOP - Splash Page Styles ********/
+            @media (min-width: 768px) {
+              .header-container i {
+                  font-size: 1.9em;
+                  margin-top: 20px;
+              }
+
+              .splash-logo {
+                grid-column: 5 / 9;
+                grid-row: 3 / 5;
+                text-align: center;
+              }
+
+              .splash-logo img {
+                  width: 300px;
+              }
+
+              #splash-header-logo h3 {
+                  font-size: 1.2em;
+                  margin-top: 21px;
+              }
+            }
 
 /*---------- HEADER ----------*/
 
 header {
-    height: 70px;
+    height: 50px;
     width: 100%;
-    background: #86a18a; /* samonte green */
+    background: #85a18a; /* samonte green */
     position: fixed;
     left: 0;
     top: 0;
 }
 
 .header-container {
-    width: 1000px;
+    width: 70%;
     margin: auto;
     padding: 0;
 }
 
+
+      /************* DESKTOP - Header Styles ********/
+            @media (min-width: 768px) {
+              header {
+                  height: 70px;
+              }
+
+              .header-container {
+                  width: 60%;
+              }
+
+            }
+
+/* NAV/LOGO STYLE FOR FULL NAV PAGES - NOT CURRENTLY LIVE
 .logo {
     float: left;
     font-family: 'Roboto', helvetica, sans-serif;
@@ -126,25 +180,52 @@ nav ul li a {
     color: #FFF;
     padding-left: 80px;
 }
-
+END NAV/LOGO STYLE FOR FULL NAV PAGES - NOT CURRENTLY LIVE */
 
 /*---------- CONTENT LAYOUT ----------*/
 
 .section-header {
-    grid-column: 5 / 9;
-    grid-row: 3 / 5;
+    grid-column: 1 / 5;
+    grid-row: 2 / 5;
 }
 
 .logo-bug {
     text-align: center;
 }
 
-.section-content {
-    grid-column: 4 / 10;
-    grid-row: 5 / 8;
+.logo-bug img {
+    width: 100px;
 }
 
+.section-content {
+    grid-column: 1 / 5;
+    grid-row: 4 / 7;
+}
 
+/************* DESKTOP - Content Layout Styles ********/
+      @media (min-width: 768px) {
+          .section-header {
+              grid-column: 5 / 9;
+              grid-row: 3 / 5;
+          }
+
+          .logo-bug {
+              text-align: center;
+          }
+
+          .logo-bug img {
+              width: 100px;
+          }
+
+          .section-content {
+              grid-column: 4 / 10;
+              grid-row: 5 / 8;
+          }
+
+      }
+
+
+/* SOLUTIONS PAGE STYLES - NOT CURRENTLY LIVE
 #solutions1 {
     grid-column: 1 / 4;
     grid-row: 5 / 8;
@@ -176,7 +257,7 @@ nav ul li a {
     grid-column: 5 / 9;
     grid-row: 9 / 12;
 }
-
+SOLUTIONS PAGE STYLES - NOT CURRENTLY LIVE */
 
 /*---------- CONTENT STYLE ----------*/
 
@@ -185,7 +266,7 @@ h1 {
     text-transform: lowercase;
     font-size: 1.5em;
     font-weight: 300;
-    color: #86a18a; /* samonte green */
+    color: #85a18a; /* samonte green */
     text-align: center;
     margin-bottom: 50px;
 }
@@ -195,18 +276,18 @@ h2 {
     text-transform: uppercase;
     font-size: 1.2em;
     font-weight: 700;
-    color: #505b67; /* samonte blue/grey */
+    color: #505c67; /* samonte blue/grey */
     text-align: center;
     padding-top: 10px;
 }
 
 p {
     font-family: 'Roboto', helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 300;
     line-height: 1.4em;
-    color: #505b67; /* samonte blue/grey */
-    text-align: left;
+    color: #505c67; /* samonte blue/grey */
+    text-align: center;
 }
 
 .solutions {
@@ -282,9 +363,9 @@ textarea {
 input[type='text'], [type='email'], [type='subject'], textarea {
 	background: none;
   border: none;
-	border-bottom: solid 2px #86a18a; /* samonte green */
+	border-bottom: solid 2px #85a18a; /* samonte green */
   font-family: 'Roboto', helvetica, sans-serif;
-	color: #505b67; /* samonte blue/grey */
+	color: #505c67; /* samonte blue/grey */
 	font-size: 1.000em;
   font-weight: 300;
   letter-spacing: 1px;
@@ -297,13 +378,12 @@ input[type='text'], [type='email'], [type='subject'], textarea {
 	-ms-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
-
 }
 
 #form_button {
   background: none;
-  border: solid 2px #86a18a;  /* samonte green */
-  color: #86a18a;  /* samonte green */
+  border: solid 2px #85a18a;  /* samonte green */
+  color: #85a18a;  /* samonte green */
   cursor: pointer;
   display: inline-block;
   font-family: 'Roboto Condensed', helvetica, sans-serif;
@@ -320,9 +400,35 @@ input[type='text'], [type='email'], [type='subject'], textarea {
 }
 
 #form_button:hover {
-  background: #86a18a;  /* samonte green */
+  background: #85a18a;  /* samonte green */
   color: #FFF;
 }
+
+/*---------- THANK YOU PAGE ----------*/
+
+.thank-you-page a {
+    font-family: 'Roboto Condensed', helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 400;
+    color: #505c67; /* samonte blue/grey */
+    text-align: center;
+}
+
+.thank-you-page p {
+    line-height: 1.7em;
+    margin-bottom: 25px;
+    font-size: .9em;
+}
+
+      @media (min-width: 768px) {
+            .thank-you-page p {
+                font-size: 1em;
+            }
+        }
+
+
 
 /*---------- FOOTER ----------*/
 
@@ -333,7 +439,7 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  background: #86a18a;  /* samonte green */
+  background: #85a18a;  /* samonte green */
 }
 
 .footer-container {

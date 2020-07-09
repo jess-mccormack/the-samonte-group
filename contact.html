@@ -7,7 +7,7 @@
         <title>the samonte group</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:ital,wght@0,300;0,500;1,400&display=swap" rel="stylesheet">
-          <script src="https://kit.fontawesome.com/036c009250.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/036c009250.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
           <div class="header-container">
               <div id="splash-header-logo">
                   <a href="index.html">
-                  <img>the <span>samonte</span> group</img></a>
+                  <h3>the <span>samonte</span> group</h3></a>
               </div>
           </div>
       </header>
@@ -30,26 +30,22 @@
               <h1>contact us</h1>
           </div>
           <div class="section-content">
-              <form action="mailto:jmccormack215@gmail.com" method="post" id="contact_form">
+              <form method="POST" method="post" action="send_mail.php" id="contact_form">
                    <div class="name">
-                       <label for="name"></label>
-                       <input type="text" placeholder="Name" name="name" id="name_input" required>
+                       <label for='name'></label>
+                       <input type="text" name="first_name" placeholder="name" id="name_input" required>
                    </div>
                    <div class="email">
                        <label for="email"></label>
-                       <input type="email" placeholder="Email" name="email" id="email_input" required>
+                       <input type="email" name="email_address" placeholder="email" id="email_input">
                    </div>
-                   <div class="subject">
-                       <label for="subject"></label>
-                       <input  type="text" placeholder="Subject" name="subject" id="subject_input" required>
-                  </div>
                   <div class="message">
                       <label for="message"></label>
-                      <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+                      <textarea name="comments" placeholder="message" id="message_input"></textarea>
                   </div>
                   <div class="submit">
                       <input type="submit" value="Send Message" id="form_button" />
-                  </div>
+                </div>
               </form><!-- form close -->
           </div>
       </div>
