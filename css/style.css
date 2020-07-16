@@ -46,7 +46,7 @@ span {
   display: grid;
   grid-template-columns: repeat(3, 105px);
   grid-template-rows: repeat(6, 100px);
-  background-color: #ebe2d4;
+  background-color: #ebe2d4; /* samonte beige */
   justify-content: center;
 }
 
@@ -73,7 +73,7 @@ span {
 }
 .splash-logo {
     grid-column: 1 / 4;
-    grid-row: 2 / 3;
+    grid-row: 3 / 5;
     text-align: center;
 }
 
@@ -143,7 +143,7 @@ header {
               }
 
               .header-container {
-                  width: 60%;
+                  width: 75%;
               }
 
             }
